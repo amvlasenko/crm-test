@@ -1,0 +1,15 @@
+@import "@shared/styles/variables.scss";
+
+.AddressPage {
+  padding: 32px 32px 0 32px;
+  width: 100%;
+  overflow: scroll;
+
+  @media (max-width: $tablet-width) {
+    padding: 10px 10px 0 10px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+}

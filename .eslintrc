@@ -1,0 +1,61 @@
+{
+  //  "parser": "@babel/eslint-parser",
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "babelOptions": {
+      "presets": [
+        [
+          "@babel/preset-react",
+          {
+            "runtime": "automatic"
+          }
+        ]
+      ]
+    },
+    "requireConfigFile": false
+  },
+  "rules": {
+    "prefer-template": "off",
+    "no-var": 1,
+    "no-unused-vars": [
+      "warn",
+      {
+        "varsIgnorePattern": "styles"
+      }
+    ],
+    "camelcase": 1,
+    "no-nested-ternary": 1,
+    "no-console": 0,
+    "no-template-curly-in-string": 1,
+    "no-self-compare": 1,
+    "import/prefer-default-export": 0,
+    "arrow-body-style": 0,
+    "import/no-extraneous-dependencies": [
+      "off",
+      {
+        "devDependencies": false
+      }
+    ],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
+  },
+  "ignorePatterns": [
+    "dist",
+    "node_modules",
+    "webpack.*"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "root": true
+}

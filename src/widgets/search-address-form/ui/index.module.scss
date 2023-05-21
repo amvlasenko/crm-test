@@ -1,0 +1,74 @@
+@import "@shared/styles/variables.scss";
+
+.SearchAddressForm {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  @media (max-width: $tablet-width) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  label {
+    flex: auto;
+    font-weight: 500;
+    font-size: 20px;
+
+    @media (max-width: $tablet-width) {
+      min-width: 280px;
+      width: 100%;
+    }
+  }
+
+  input {
+    margin-top: 24px;
+    padding: 20px;
+    width: 100%;
+    border: 3px solid $theme-violet;
+    border-radius: 10px;
+    font-size: 20px;
+    line-height: 24px;
+
+    &::placeholder {
+      color: $theme-input-placeholder;
+    }
+  }
+
+  button {
+    position: relative;
+    padding: 20px 40px 20px 80px;
+    width: 217px;
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 26px;
+    border: none;
+    border-radius: 10px;
+    background-color: $theme-violet;
+
+    @media (max-width: $tablet-width) {
+      min-width: 280px;
+      width: 100%;
+    }
+
+    &:before {
+      position: absolute;
+      display: block;
+      top: 19px;
+      left: 40px;
+      width: 32px;
+      height: 32px;
+      background-color: #FFFFFF;
+      -webkit-mask-image: url("@shared/assets/icons/icon-search");
+      mask-image: url("@shared/assets/icons/icon-search");
+      content: "";
+
+      @media (max-width: $tablet-width) {
+        left: calc(50% - 60px);
+      }
+    }
+  }
+}

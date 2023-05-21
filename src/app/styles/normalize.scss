@@ -1,0 +1,29 @@
+@import "@shared/styles/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: Montserrat, sans-serif;
+  color: $theme-black;
+  scrollbar-color: $theme-violet $theme-violet;
+  scrollbar-width: thin;
+
+  #root {
+    position: relative;
+    height: 100vh;
+    min-width: 320px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+}

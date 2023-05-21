@@ -1,0 +1,179 @@
+@import "@shared/styles/variables.scss";
+
+.font {
+  text-align: left;
+  font-size: 20px;
+  color: $theme-black;
+}
+
+.Menu {
+  @extend .font;
+  padding: 24px 0;
+  width: 300px;
+  flex-shrink: 0;
+  box-shadow: 0 0 5px rgba(2, 0, 96, 0.25);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-weight: 700;
+  background-color: #FFFFFF;
+
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+
+  .description {
+    padding: 0 0 0 32px;
+  }
+
+  li:first-of-type {
+    margin-top: 30px;
+  }
+
+  li:not(:first-of-type) {
+    margin-top: 35px;
+  }
+
+  a {
+    @extend .font;
+    padding: 2px 0 3px 32px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-weight: 600;
+  }
+
+  .btn {
+    @extend a;
+    cursor: pointer;
+  }
+
+  .arrow {
+    position: relative;
+
+    &:after {
+      position: absolute;
+      top: 11px;
+      right: 19px;
+      width: 15px;
+      height: 15px;
+      display: block;
+      background-image: url("@shared/assets/icons/icon-arrow");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      content: "";
+      transform: rotate(180deg);
+    }
+  }
+
+  .open {
+    &:after {
+      transform: rotate(0deg);
+    }
+  }
+
+  .icon {
+    margin-right: 16px;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .home {
+    @extend .icon;
+    background-image: url("@shared/assets/icons/icon-home");
+  }
+
+  .search {
+    @extend .icon;
+    background-image: url("@shared/assets/icons/icon-search");
+  }
+
+  .tables {
+    @extend .icon;
+    background-image: url("@shared/assets/icons/icon-table");
+  }
+
+  .calendar {
+    @extend .icon;
+    background-image: url("@shared/assets/icons/icon-calendar");
+  }
+
+  .maps {
+    @extend .icon;
+    background-image: url("@shared/assets/icons/icon-marker");
+  }
+
+  .widgets {
+    @extend .icon;
+    background-image: url("@shared/assets/icons/icon-tv");
+  }
+
+  .settings {
+    @extend .icon;
+    background-image: url("@shared/assets/icons/icon-gear");
+  }
+
+  .profile {
+    @extend .icon;
+    background-image: url("@shared/assets/icons/icon-person");
+  }
+
+  .financials {
+    @extend .icon;
+    background-image: url("@shared/assets/icons/icon-cashbox.svg");
+  }
+
+  .user {
+    @extend .icon;
+    background-color: #000000;
+    -webkit-mask-image: url("@shared/assets/icons/icon-person-circle");
+    mask-image: url("@shared/assets/icons/icon-person-circle");
+    -webkit-mask-size: contain;
+    mask-size: contain;
+  }
+
+  .exit {
+    @extend .icon;
+    background-image: url("@shared/assets/icons/icon-exit");
+  }
+
+  .nested {
+    padding-left: 45px;
+
+    li:first-of-type {
+      margin-top: 27px;
+    }
+
+    li:not(:first-of-type) {
+      margin-top: 25px;
+    }
+  }
+
+  .current {
+    position: relative;
+
+    &:after {
+      position: absolute;
+      top: 0;
+      right: -3px;
+      width: 6px;
+      height: 37px;
+      display: block;
+      background-color: $theme-violet;
+      border-radius: 5px;
+      content: "";
+    }
+  }
+}
+
+.inHeader {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  display: block;
+  z-index: 1;
+}

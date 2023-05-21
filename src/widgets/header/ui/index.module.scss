@@ -1,0 +1,55 @@
+@import "@shared/styles/variables.scss";
+
+.Header {
+  padding: 0 32px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: $theme-violet;
+
+  .logo {
+    padding-left: 72px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    background: url("@shared/assets/icons/icon-logo") no-repeat 0 center;
+    background-size: contain;
+
+
+    &:visited {
+      color: #FFFFFF;
+    }
+  }
+
+  button {
+    width: 48px;
+    height: 48px;
+    font-size: 0;
+    color: transparent;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .open {
+    background-image: url("@shared/assets/icons/icon-menu");
+  }
+
+  .close {
+    background-image: url("@shared/assets/icons/icon-close");
+  }
+
+
+  .user {
+    @extend .logo;
+    background-position: 8px center;
+    background-image: url("@shared/assets/icons/icon-person-circle");
+  }
+}
