@@ -8,7 +8,9 @@
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "dev:watch": "cross-env NODE_ENV=development webpack --mode development --watch",
     "start": "cross-env NODE_ENV=development  webpack-dev-server --mode development",
-    "build": "cross-env NODE_ENV=production webpack --mode production"
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +38,7 @@
     "eslint": "^8.40.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-webpack-plugin": "^4.0.1",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.1",
     "mini-css-extract-plugin": "^2.7.5",
     "sass": "^1.62.1",
