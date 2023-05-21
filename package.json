@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "homepage": "https://amvlasenko.github.io/",
+  "homepage": "https://amvlasenko.github.io/crm-test/",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "dev:watch": "cross-env NODE_ENV=development webpack --mode development --watch",
