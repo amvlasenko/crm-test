@@ -10,7 +10,7 @@ export const routes = [
     },
     {
         path: '*',
-        element: <NewsPage/>,
+        element: <ErrorPage/>,
     },
     {
         path: '/address',

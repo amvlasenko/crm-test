@@ -98,7 +98,10 @@ module.exports = {
         port: 3333,
         hot: isDev,
         open: false,
-        historyApiFallback: true,
+        // historyApiFallback: true,
+        historyApiFallback: {
+            index: '/index.html'
+        },
         client: {
             overlay: {
                 errors: true,
