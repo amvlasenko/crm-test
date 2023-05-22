@@ -2,6 +2,7 @@ import {FC, FormEvent, useState} from 'react';
 import styles from './index.module.scss';
 import {api} from '@shared/api';
 import {IAddress} from '@app/types';
+import {validateInputLength} from '../utils';
 
 export interface ISearchAddressForm {
     setAddresses: (addresses: IAddress[]) => void,
@@ -10,10 +11,14 @@ export interface ISearchAddressForm {
 export const SearchAddressForm: FC<ISearchAddressForm> = (props) => {
     const {setAddresses} = props;
     const [inputAddressValue, setInputAddressValue] = useState('');
+    const MinInputLength = 3;
 
     const searchHandler = async (evt: FormEvent) => {
         evt.preventDefault();
-        setAddresses(await api.getAddress(inputAddressValue));
+
+        validateInputLength(inputAddressValue, MinInputLength) ?
+            setAddresses(await api.getAddress(inputAddressValue)) :
+            alert(`Минимальная длинна запроса ${MinInputLength} символа`);
 
     };
     return (
