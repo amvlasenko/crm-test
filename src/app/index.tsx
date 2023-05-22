@@ -18,7 +18,9 @@ const App: FC = () => {
         return resizeSubscriber();
     }, []);
 
+
     // TODO: Вынести в отдельный хук (useMatchMedia)
+    // Функция нужна только для демонстрации "резиновости" верстки. Либо реализовать логику на чистом CSS.
     const resizeSubscriber = () => {
         window.addEventListener('resize', () => {
             if (window.innerWidth <= 768) {

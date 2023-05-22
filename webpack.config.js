@@ -27,7 +27,6 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.ts', '.jsx', '.tsx', '.json', '.css', '.scss', '.png', '.jpg', '.jpeg', '.svg', '.ttf'],
         alias: {
-            // Алиасы для удобных импортов
             '@': path.resolve(__dirname, 'src'),
             '@app': path.resolve(__dirname, 'src/app'),
             '@processes': path.resolve(__dirname, 'src/processes'),
@@ -62,7 +61,8 @@ module.exports = {
             {
                 test: /\.((c|sa|sc)ss)$/i,
                 use: [
-                    'style-loader',
+                    // 'style-loader', // Вынос стилей в JS
+                    MiniCssExtractPlugin.loader, // Вынос стилей  CSS
                     'css-loader',
                     'sass-loader',
                 ],
@@ -84,7 +84,6 @@ module.exports = {
                 collapseWhitespace: !isDev
             }
         }),
-        // Вынос css в отдельный файл
         new MiniCssExtractPlugin({
             filename: isDev ? '[name].css' : '[name].[contenthash].css'
         }),
