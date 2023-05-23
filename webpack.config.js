@@ -96,8 +96,7 @@ module.exports = {
     devServer: {
         port: 3333,
         hot: isDev,
-        open: false,
-        // historyApiFallback: true,
+        open: ['http://localhost:3333/crm-test'],
         historyApiFallback: {
             index: '/index.html'
         },

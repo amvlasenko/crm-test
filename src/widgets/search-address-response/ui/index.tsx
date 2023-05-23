@@ -8,7 +8,7 @@ export interface ISearchAddressResponse {
 
 export const SearchAddressResponse: FC<ISearchAddressResponse> = (props) => {
     const {addressesLisl} = props;
-    console.log(addressesLisl);
+    
     return (
         <section className={styles.SearchAddressResponse}>
             <h2>Адреса</h2>

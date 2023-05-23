@@ -12,15 +12,13 @@ export const Menu: FC<IMenu> = (props) => {
     const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false);
     const {pathname} = useLocation();
 
-    // Вместо evt: any можно сделать отдельные хендлеры для клавиатуры и кликов
-    const settingsButtonHandler = (evt: any) => {
-        if (evt.type === 'click') {
-            setIsSettingsOpen((prev) => !prev);
-        } else if (evt.type === 'keydown' && (evt.keyCode === 13 || evt.keyCode === 32)) {
-            setIsSettingsOpen((prev) => !prev);
-        }
-
+    const settingsButtonClickHandler = (evt: React.MouseEvent<HTMLDivElement>) => {
+        return setIsSettingsOpen((prev) => !prev);
     };
+    const settingsButtonKeydownHandler = (evt: React.KeyboardEvent<HTMLDivElement>) => {
+        return (evt.key === 'Enter' || evt.key === ' ') && setIsSettingsOpen((prev) => !prev);
+    };
+
     return (
         <nav className={[styles.Menu, inHeader && styles.inHeader].join(' ')}>
             <span className={styles.description}>Меню</span>
@@ -64,8 +62,8 @@ export const Menu: FC<IMenu> = (props) => {
                 <li>
                     <div tabIndex={0}
                          className={[styles.btn, styles.arrow, isSettingsOpen && styles.open].join(' ')}
-                         onClick={evt => settingsButtonHandler(evt)}
-                         onKeyDown={evt => settingsButtonHandler(evt)}
+                         onClick={evt => settingsButtonClickHandler(evt)}
+                         onKeyDown={evt => settingsButtonKeydownHandler(evt)}
                     >
                         <div className={styles.settings}></div>
                         Настройки

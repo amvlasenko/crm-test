@@ -31,6 +31,7 @@ const App: FC = () => {
         });
         return () => window.removeEventListener('resize', () => console.log('resizeSubscriber removed'));
     };
+    
     return (
         <>
             <Header isTablet={isTablet}/>
