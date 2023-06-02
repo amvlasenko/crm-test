@@ -4,7 +4,7 @@
 # CRM-Test
 **Зачем:**
 
-Тестовое задание на позицию Frontend developer в [X-LAB](https://x-lab.com.ru)
+Тестовое задание на позицию Frontend developer
 
 **Сроки/за сколько справился:**
 
