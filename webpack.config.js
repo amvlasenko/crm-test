@@ -96,10 +96,8 @@ module.exports = {
     devServer: {
         port: 3333,
         hot: isDev,
-        open: ['http://localhost:3333/crm-test'],
-        historyApiFallback: {
-            index: '/index.html'
-        },
+        open: ['http://localhost:3333'],
+        historyApiFallback: true,
         client: {
             overlay: {
                 errors: true,
