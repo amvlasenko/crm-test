@@ -1,6 +1,6 @@
 # crm-test
 
-## Ссылка на GitHub Pages: https://amvlasenko.github.io/crm-test
+## Ссылка на развернутое приложение: http://193.104.57.19
 # CRM-Test
 **Зачем:**
 
